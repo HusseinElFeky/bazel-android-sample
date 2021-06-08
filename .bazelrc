@@ -1,0 +1,2 @@
+startup --output_user_root="C:\\BazelOutput"
+build --javabase=@bazel_tools//tools/jdk:remote_jdk11
