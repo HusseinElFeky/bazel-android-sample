@@ -13,5 +13,11 @@ android_library(
 android_binary(
     name = "mediarecorder",
     manifest = "AndroidManifest.xml",
+    manifest_values = {
+        "minSdkVersion": "16",
+        "targetSdkVersion": "30",
+        "versionCode" : "1",
+        "versionName" : "1.0.0"
+    },
     deps = [":main"]
 )
