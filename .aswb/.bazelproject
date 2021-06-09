@@ -1,0 +1,15 @@
+directories:
+  .
+
+derive_targets_from_directories: false
+
+targets:
+  //mediarecorder/java/com/example/android/mediarecorder:mediarecorder
+  //mediarecorder/java/com/example/android/mediarecorder:main
+  //mediarecorder/java/com/example/android/common/media:media
+
+additional_languages:
+  kotlin
+
+android_sdk_platform: android-30
+android_min_sdk: 16
