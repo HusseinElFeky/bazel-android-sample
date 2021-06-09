@@ -1,0 +1,6 @@
+/bazel-android-sample.iml
+
+.aswb/
+
+!.aswb/.bazelproject
+!.aswb/.idea/.gitignore
