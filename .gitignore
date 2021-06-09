@@ -4,3 +4,8 @@
 
 !.aswb/.bazelproject
 !.aswb/.idea/.gitignore
+
+/bazel-bazel-android-sample
+/bazel-bin
+/bazel-out
+/bazel-testlogs
