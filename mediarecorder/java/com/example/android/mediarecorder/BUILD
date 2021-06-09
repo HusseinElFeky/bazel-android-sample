@@ -11,7 +11,7 @@ android_library(
 )
 
 android_binary(
-    name = "mediarecorder",
+    name = "app",
     manifest = "AndroidManifest.xml",
     manifest_values = {
         "minSdkVersion": "16",
