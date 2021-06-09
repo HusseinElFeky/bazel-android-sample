@@ -6,7 +6,7 @@ android_library(
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
     deps = [
-        "//mediarecorder/java/com/example/android/common/media"
+        "//app/src/main/java/com/example/android/common/media"
     ]
 )
 

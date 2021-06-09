@@ -4,9 +4,9 @@ directories:
 derive_targets_from_directories: false
 
 targets:
-  //mediarecorder/java/com/example/android/mediarecorder:app
-  //mediarecorder/java/com/example/android/mediarecorder:main
-  //mediarecorder/java/com/example/android/common/media:media
+  //app/src/main/java/com/example/android/mediarecorder:app
+  //app/src/main/java/com/example/android/mediarecorder:main
+  //app/src/main/java/com/example/android/common/media:media
 
 additional_languages:
   kotlin
