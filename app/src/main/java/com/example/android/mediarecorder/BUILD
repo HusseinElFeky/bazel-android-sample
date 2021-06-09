@@ -14,6 +14,7 @@ android_binary(
     name = "app",
     manifest = "AndroidManifest.xml",
     manifest_values = {
+        "applicationId": "com.husseinelfeky.bazelsample",
         "minSdkVersion": "16",
         "targetSdkVersion": "30",
         "versionCode" : "1",
