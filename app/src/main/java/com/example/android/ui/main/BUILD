@@ -6,7 +6,10 @@ android_library(
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
     deps = [
-        "//app/src/main/java/com/example/android/common/media"
+        "//app/src/main/java/com/example/android/common/media",
+        "//app/src/main/java/com/example/android/ui/detail",
+        "@maven//:androidx_appcompat_appcompat",
+        "@maven//:androidx_constraintlayout_constraintlayout"
     ]
 )
 

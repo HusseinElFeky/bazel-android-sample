@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.mediarecorder;
+package com.example.android.ui.main;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.media.CamcorderProfile;
@@ -30,15 +31,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.android.common.media.CameraHelper;
+import com.example.android.ui.detail.DetailActivity;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 /**
- *  This activity uses the camera/camcorder as the A/V source for the {@link android.media.MediaRecorder} API.
- *  A {@link android.view.TextureView} is used as the camera preview which limits the code to API 14+. This
- *  can be easily replaced with a {@link android.view.SurfaceView} to run on older devices.
+ * This activity uses the camera/camcorder as the A/V source for the {@link android.media.MediaRecorder} API.
+ * A {@link android.view.TextureView} is used as the camera preview which limits the code to API 14+. This
+ * can be easily replaced with a {@link android.view.SurfaceView} to run on older devices.
  */
 public class MainActivity extends Activity {
 
@@ -54,19 +56,26 @@ public class MainActivity extends Activity {
     private static final int PERMISSION_CODE = 1001;  // Arbitrary int
     private static final String TAG = "Recorder";
     private Button captureButton;
+    private Button navigateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_main);
+        setContentView(R.layout.activity_main);
 
         mPreview = (TextureView) findViewById(R.id.surface_view);
-        captureButton = (Button) findViewById(R.id.button_capture);
+        captureButton = (Button) findViewById(R.id.btn_capture);
+        navigateButton = (Button) findViewById(R.id.btn_navigate);
+
+        navigateButton.setOnClickListener(
+                v -> startActivity(new Intent(MainActivity.this, DetailActivity.class))
+        );
+
         if (Build.VERSION.SDK_INT >= 23) {
             requestPermissions(new String[]{
-                android.Manifest.permission.CAMERA,
-                android.Manifest.permission.RECORD_AUDIO,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_CODE);
+                    android.Manifest.permission.CAMERA,
+                    android.Manifest.permission.RECORD_AUDIO,
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_CODE);
         } else {
             cameraPermission = true;
             microphonePermission = true;
@@ -94,8 +103,8 @@ public class MainActivity extends Activity {
      */
     public void onCaptureClick(View view) {
         if (!(cameraPermission && microphonePermission && storagePermission)) {
-          setCaptureButtonText("Missing permissions!");
-          return;
+            setCaptureButtonText("Missing permissions!");
+            return;
         }
 
         if (isRecording) {
@@ -144,7 +153,7 @@ public class MainActivity extends Activity {
         releaseCamera();
     }
 
-    private void releaseMediaRecorder(){
+    private void releaseMediaRecorder() {
         if (mMediaRecorder != null) {
             // clear recorder configuration
             mMediaRecorder.reset();
@@ -157,15 +166,15 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void releaseCamera(){
-        if (mCamera != null){
+    private void releaseCamera() {
+        if (mCamera != null) {
             // release the camera for other applications
             mCamera.release();
             mCamera = null;
         }
     }
 
-    private boolean prepareVideoRecorder(){
+    private boolean prepareVideoRecorder() {
 
         // BEGIN_INCLUDE (configure_preview)
         mCamera = CameraHelper.getDefaultCameraInstance();
@@ -188,9 +197,9 @@ public class MainActivity extends Activity {
         parameters.setPreviewSize(profile.videoFrameWidth, profile.videoFrameHeight);
         mCamera.setParameters(parameters);
         try {
-                // Requires API level 11+, For backward compatibility use {@link setPreviewDisplay}
-                // with {@link SurfaceView}
-                mCamera.setPreviewTexture(mPreview.getSurfaceTexture());
+            // Requires API level 11+, For backward compatibility use {@link setPreviewDisplay}
+            // with {@link SurfaceView}
+            mCamera.setPreviewTexture(mPreview.getSurfaceTexture());
         } catch (IOException e) {
             Log.e(TAG, "Surface texture is unavailable or unsuitable" + e.getMessage());
             return false;
@@ -206,7 +215,7 @@ public class MainActivity extends Activity {
         mMediaRecorder.setCamera(mCamera);
 
         // Step 2: Set sources
-        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT );
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
         mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 
         // Step 3: Set a CamcorderProfile (requires API Level 8 or higher)
@@ -265,8 +274,6 @@ public class MainActivity extends Activity {
             }
             // inform the user that recording has started
             setCaptureButtonText("Stop");
-
         }
     }
-
 }

@@ -19,15 +19,32 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
 
+# Load Kotlin build rules
+RULES_KOTLIN_VERSION = "9051eb053f9c958440603d557316a6e9fda14687"
+
+http_archive(
+    name = "io_bazel_rules_kotlin",
+    sha256 = "c36e71eec84c0e17dd098143a9d93d5720e81b4db32bceaf2daf939252352727",
+    strip_prefix = "rules_kotlin-%s" % RULES_KOTLIN_VERSION,
+    url = "https://github.com/bazelbuild/rules_kotlin/archive/%s.tar.gz" % RULES_KOTLIN_VERSION,
+)
+
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kotlin_repositories", "kt_register_toolchains")
+kotlin_repositories()
+kt_register_toolchains()
+
 # Load Maven
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        # Android Libraries
+        # Android Main Libraries
         "androidx.appcompat:appcompat:1.3.0",
         "com.google.android.material:material:1.3.0",
         "androidx.constraintlayout:constraintlayout:2.0.4",
+
+        # Android Core Kotlin Extensions
+        "androidx.core:core-ktx:1.3.2",
 
         # Test Libraries
         "junit:junit:4.13.2",

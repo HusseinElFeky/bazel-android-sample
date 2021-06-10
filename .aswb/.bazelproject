@@ -4,8 +4,9 @@ directories:
 derive_targets_from_directories: false
 
 targets:
-  //app/src/main/java/com/example/android/mediarecorder:app
-  //app/src/main/java/com/example/android/mediarecorder:main
+  //app/src/main/java/com/example/android/ui/main:app
+  //app/src/main/java/com/example/android/ui/main:main
+  //app/src/main/java/com/example/android/ui/detail:detail
   //app/src/main/java/com/example/android/common/media:media
 
 additional_languages:

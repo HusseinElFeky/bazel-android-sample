@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextureView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="onCaptureClick"
+        android:text="@string/capture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_navigate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_navigate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/navigate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_capture" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

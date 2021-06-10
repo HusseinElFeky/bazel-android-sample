@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="label_detail">Detail Screen</string>
+    <string name="this_is_detail_activity">This is the DetailActivity.</string>
+
+</resources>
