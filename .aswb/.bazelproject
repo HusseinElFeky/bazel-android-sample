@@ -9,6 +9,10 @@ targets:
   //app/src/main/java/com/example/android/ui/detail:detail
   //app/src/main/java/com/example/android/common/media:media
   //app/src/test/java/com/example/android:unit_test
+  //app/src/androidTest/java/com/example/android/ui/main:test_app
+  //app/src/androidTest/java/com/example/android/ui/main:test_deps
+  //app/src/androidTest/java/com/example/android/ui/main:test_main
+  //app/src/androidTest/java/com/example/android/ui/main:test_app_instrumentation
 
 additional_languages:
   kotlin

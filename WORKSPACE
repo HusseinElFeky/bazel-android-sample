@@ -33,6 +33,23 @@ load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kotlin_repositories", "kt_reg
 kotlin_repositories()
 kt_register_toolchains()
 
+# Android Test Support
+#
+# This repository contains the supporting tools to run Android instrumentation tests,
+# like the emulator definitions (android_device) and the device broker/test runner.
+ATS_TAG = "1edfdab3134a7f01b37afabd3eebfd2c5bb05151"
+ATS_SHA256 = "dcd1ff76aef1a26329d77863972780c8fe1fc8ff625747342239f0489c2837ec"
+
+http_archive(
+    name = "android_test_support",
+    sha256 = ATS_SHA256,
+    strip_prefix = "android-test-%s" % ATS_TAG,
+    urls = ["https://github.com/android/android-test/archive/%s.tar.gz" % ATS_TAG],
+)
+
+load("@android_test_support//:repo.bzl", "android_test_repositories")
+android_test_repositories()
+
 # Load Maven
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 

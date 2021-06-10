@@ -5,6 +5,7 @@ android_library(
     srcs = ["MainActivity.java"],
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
+    visibility = ["//app/src/androidTest:__subpackages__"],
     deps = [
         "//app/src/main/java/com/example/android/common/media",
         "//app/src/main/java/com/example/android/ui/detail",
@@ -23,5 +24,6 @@ android_binary(
         "versionCode" : "1",
         "versionName" : "1.0.0"
     },
+    visibility = ["//app/src/androidTest:__subpackages__"],
     deps = [":main"]
 )
