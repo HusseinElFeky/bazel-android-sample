@@ -48,8 +48,11 @@ maven_install(
 
         # Test Libraries
         "junit:junit:4.13.2",
+        "org.hamcrest:hamcrest:2.2",
         "androidx.test.espresso:espresso-core:3.3.0",
-        "org.hamcrest:hamcrest-library:2.2"
+        "androidx.test:runner:1.3.0",
+        "androidx.test:rules:1.3.0",
+        "androidx.test.ext:junit:1.1.2"
     ],
     repositories = [
         "https://maven.google.com", # Google

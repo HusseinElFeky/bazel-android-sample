@@ -8,6 +8,7 @@ targets:
   //app/src/main/java/com/example/android/ui/main:main
   //app/src/main/java/com/example/android/ui/detail:detail
   //app/src/main/java/com/example/android/common/media:media
+  //app/src/test/java/com/example/android:unit_test
 
 additional_languages:
   kotlin
