@@ -8,6 +8,7 @@ targets:
   //app/src/main/java/com/husseinelfeky/bazelsample/ui/main:main
   //app/src/main/java/com/husseinelfeky/bazelsample/ui/detail:detail
   //app/src/main/java/com/husseinelfeky/bazelsample/common/media:media
+  //app/src/main/java/com/husseinelfeky/bazelsample/protosample:protosample
   //app/src/test/java/com/husseinelfeky/bazelsample:unit_test
   //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_app
   //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_deps

@@ -30,7 +30,9 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.husseinelfeky.bazelsample.common.media.CameraHelper;
+import com.husseinelfeky.bazelsample.protosample.PersonProvider;
 import com.husseinelfeky.bazelsample.ui.detail.DetailActivity;
 
 import java.io.File;
@@ -80,6 +82,12 @@ public class MainActivity extends Activity {
             cameraPermission = true;
             microphonePermission = true;
             storagePermission = true;
+        }
+
+        try {
+            PersonProvider.printPerson();
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
         }
     }
 

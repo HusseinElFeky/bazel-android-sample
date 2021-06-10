@@ -1,3 +1,4 @@
+# Load HTTP Archive
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # Load Android build rules
@@ -18,6 +19,19 @@ http_archive(
     sha256 = RULES_JVM_EXTERNAL_SHA,
     url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
 )
+
+# Load Protobuf build rules
+http_archive(
+    name = "rules_proto",
+    strip_prefix = "rules_proto-f7a30f6f80006b591fa7c437fe5a951eb10bcbcf",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/f7a30f6f80006b591fa7c437fe5a951eb10bcbcf.tar.gz",
+        "https://github.com/bazelbuild/rules_proto/archive/f7a30f6f80006b591fa7c437fe5a951eb10bcbcf.tar.gz"
+    ]
+)
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+rules_proto_dependencies()
+rules_proto_toolchains()
 
 # Load Kotlin build rules
 RULES_KOTLIN_VERSION = "9051eb053f9c958440603d557316a6e9fda14687"
@@ -62,6 +76,13 @@ maven_install(
 
         # Android Core Kotlin Extensions
         "androidx.core:core-ktx:1.3.2",
+
+        # Protobuf
+#        "com.google.protobuf:protobuf-java:3.17.3",
+#        "com.google.protobuf:protobuf-java-util:3.17.3",
+
+        # Gson
+        "com.google.code.gson:gson:2.8.7",
 
         # Test Libraries
         "junit:junit:4.13.2",

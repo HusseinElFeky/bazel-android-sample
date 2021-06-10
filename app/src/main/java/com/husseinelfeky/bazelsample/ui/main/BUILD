@@ -8,9 +8,15 @@ android_library(
     visibility = ["//app/src/androidTest:__subpackages__"],
     deps = [
         "//app/src/main/java/com/husseinelfeky/bazelsample/common/media",
+        "//app/src/main/java/com/husseinelfeky/bazelsample/protosample",
         "//app/src/main/java/com/husseinelfeky/bazelsample/ui/detail",
         "@maven//:androidx_appcompat_appcompat",
-        "@maven//:androidx_constraintlayout_constraintlayout"
+        "@maven//:androidx_constraintlayout_constraintlayout",
+#        "@maven//:com_google_protobuf_protobuf_java",
+#        "@maven//:com_google_protobuf_protobuf_java_util",
+        "@com_google_protobuf//:protobuf_java",
+        "@com_google_protobuf//:protobuf_java_util",
+        "@maven//:com_google_code_gson_gson"
     ]
 )
 
