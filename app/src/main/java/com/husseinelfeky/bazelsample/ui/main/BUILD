@@ -7,8 +7,8 @@ android_library(
     resource_files = glob(["res/**"]),
     visibility = ["//app/src/androidTest:__subpackages__"],
     deps = [
-        "//app/src/main/java/com/example/android/common/media",
-        "//app/src/main/java/com/example/android/ui/detail",
+        "//app/src/main/java/com/husseinelfeky/bazelsample/common/media",
+        "//app/src/main/java/com/husseinelfeky/bazelsample/ui/detail",
         "@maven//:androidx_appcompat_appcompat",
         "@maven//:androidx_constraintlayout_constraintlayout"
     ]

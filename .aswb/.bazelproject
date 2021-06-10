@@ -4,15 +4,15 @@ directories:
 derive_targets_from_directories: false
 
 targets:
-  //app/src/main/java/com/example/android/ui/main:app
-  //app/src/main/java/com/example/android/ui/main:main
-  //app/src/main/java/com/example/android/ui/detail:detail
-  //app/src/main/java/com/example/android/common/media:media
-  //app/src/test/java/com/example/android:unit_test
-  //app/src/androidTest/java/com/example/android/ui/main:test_app
-  //app/src/androidTest/java/com/example/android/ui/main:test_deps
-  //app/src/androidTest/java/com/example/android/ui/main:test_main
-  //app/src/androidTest/java/com/example/android/ui/main:test_app_instrumentation
+  //app/src/main/java/com/husseinelfeky/bazelsample/ui/main:app
+  //app/src/main/java/com/husseinelfeky/bazelsample/ui/main:main
+  //app/src/main/java/com/husseinelfeky/bazelsample/ui/detail:detail
+  //app/src/main/java/com/husseinelfeky/bazelsample/common/media:media
+  //app/src/test/java/com/husseinelfeky/bazelsample:unit_test
+  //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_app
+  //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_deps
+  //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_main
+  //app/src/androidTest/java/com/husseinelfeky/bazelsample/ui/main:test_app_instrumentation
 
 additional_languages:
   kotlin

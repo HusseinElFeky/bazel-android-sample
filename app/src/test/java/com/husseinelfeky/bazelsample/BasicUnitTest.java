@@ -1,4 +1,4 @@
-package com.example.android;
+package com.husseinelfeky.bazelsample;
 
 import androidx.test.filters.SmallTest;
 

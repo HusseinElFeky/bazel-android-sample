@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.ui.main;
+package com.husseinelfeky.bazelsample.ui.main;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,8 +30,8 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.android.common.media.CameraHelper;
-import com.example.android.ui.detail.DetailActivity;
+import com.husseinelfeky.bazelsample.common.media.CameraHelper;
+import com.husseinelfeky.bazelsample.ui.detail.DetailActivity;
 
 import java.io.File;
 import java.io.IOException;

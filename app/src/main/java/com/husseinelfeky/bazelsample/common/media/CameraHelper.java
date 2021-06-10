@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.common.media;
+package com.husseinelfeky.bazelsample.common.media;
 
 import android.annotation.TargetApi;
 import android.hardware.Camera;

@@ -18,16 +18,16 @@ android_library(
     visibility = ["//app/src/androidTest:__subpackages__"],
     deps = [
         ":test_deps",
-        "//app/src/main/java/com/example/android/ui/main:main"
+        "//app/src/main/java/com/husseinelfeky/bazelsample/ui/main:main"
     ]
 )
 
 android_binary(
     name = "test_app",
-    instruments = "//app/src/main/java/com/example/android/ui/main:app",
+    instruments = "//app/src/main/java/com/husseinelfeky/bazelsample/ui/main:app",
     manifest = "AndroidManifest.xml",
     manifest_values = {
-        "applicationId": "com.example.android",
+        "applicationId": "com.husseinelfeky.bazelsample",
         "minSdkVersion": "16",
         "targetSdkVersion": "30",
         "versionCode" : "1",

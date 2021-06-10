@@ -1,4 +1,4 @@
-package com.example.android.ui.main;
+package com.husseinelfeky.bazelsample.ui.main;
 
 import android.Manifest;
 
